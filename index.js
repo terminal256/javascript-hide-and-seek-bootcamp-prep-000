@@ -16,11 +16,11 @@ function increaseRankBy(n){
   }
 }
 function deepestChild(){
-  return find(doc.querySelector("div#grand-node"));
+  return find(doc.querySelector("#grand-node"));
 }
 
 function find(dom){
-  return findaux(dom, 0)[0].innerHTML;
+  return findaux(dom, 0)[0];
 }
 function findaux(dom, depth) {
   // First check that the element has child nodes 
