@@ -1,6 +1,7 @@
 const doc = document
-  .getElementById('app')
-  .querySelectorAll('ul.ranked-list li');
+  .getElementById('app');
+  
+const lis = doc.querySelectorAll('ul.ranked-list li');
  
 for (let i = 0; i < lis.length; i++) {
   lis[i].innerHTML = (i + 1).toString();
