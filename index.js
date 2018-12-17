@@ -19,7 +19,8 @@ function deepestChild(){
   return doc.querySelector("#grand-node");
 }
 
-function find(dom, criteriaFn) {
+function find(dom) {
+  
   // initialize two variables, `current`, and `next`
   // `current` keeps track of the element that we're
   // currently on, just like we did when unpacking the
