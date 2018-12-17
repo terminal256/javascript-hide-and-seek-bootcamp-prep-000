@@ -16,10 +16,13 @@ function increaseRankBy(n){
   }
 }
 function deepestChild(){
-  return doc.querySelector("#grand-node");
+  return find(doc.querySelector("#grand-node"), 0);
 }
 
-function find(dom, depth) {
+function find(dom){
+  return findaux(dom, 0);
+}
+function findaux(dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
@@ -31,10 +34,9 @@ function find(dom, depth) {
       let depthans = and[1];
       if (depthans > maxDepth){
         domAnswer = domans; 
+        maxDepth = depthans;
       }
     }
     return [domAnswer, maxDepth];
-    
-    
   } else {return [dom, depth];} 
 }
