@@ -19,16 +19,13 @@ function deepestChild(){
   return doc.querySelector("#grand-node");
 }
 
-function find(dom) {
-  // parg is an object reference to a <p> element
-
+function find(dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
-    var children = parg.childNodes;
-  
-    for (var i = 0; i < children.length; i++) {
-      find children[i]
-
+    let children = parg.childNodes;
+    let maxDepth depth;
+    for (let i = 0; i < children.length; i++) {
+      find(children[i], depth)
     }
-  } 
+  } else {return depth;} 
 }
