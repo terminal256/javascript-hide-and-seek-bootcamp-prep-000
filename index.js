@@ -1,5 +1,4 @@
-const doc = document
-  .getElementById('app');
+const 
 
 function getFirstSelector(selector){
   return doc.querySelector(selector);
@@ -16,6 +15,7 @@ function increaseRankBy(n){
   }
 }
 function deepestChild(){
+  
   return find(doc.querySelector("#grand-node div"));
 }
 
