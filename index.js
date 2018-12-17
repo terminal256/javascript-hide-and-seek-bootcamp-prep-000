@@ -15,4 +15,6 @@ function increaseRankBy(n){
     lis[i].innerHTML = (n + oldn).toString();
   }
 }
-function deepestChild(){}
+function deepestChild(){
+  return doc.querySelector
+}
