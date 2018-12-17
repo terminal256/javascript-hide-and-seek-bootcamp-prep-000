@@ -1,9 +1,11 @@
 const 
 
 function getFirstSelector(selector){
+  
   return doc.querySelector(selector);
 }
 function nestedTarget(){
+  let doc = document.getElementById('app');
   return doc.querySelector("#nested .target");
   
 }
