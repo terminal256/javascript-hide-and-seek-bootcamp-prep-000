@@ -9,5 +9,7 @@ for (let i = 0; i < lis.length; i++) {
 
 function getFirstSelector(selector){}
 function nestedTarget(){}
-function increaseRankBy(n){}
+function increaseRankBy(n){
+  
+}
 function deepestChild(){}
