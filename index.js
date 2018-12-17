@@ -22,10 +22,19 @@ function deepestChild(){
 function find(dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
-    let children = parg.childNodes;
-    let maxDepth depth;
+    let children = dom.childNodes;
+    let maxDepth = depth;
+    let domAnswer = dom;
     for (let i = 0; i < children.length; i++) {
-      find(children[i], depth)
+      let ans = find(children[i], 1 + depth);
+      let domans = ans[0];
+      let depthans = and[1];
+      if (depthans > maxDepth){
+        domAnswer = domans; 
+      }
     }
-  } else {return depth;} 
+    return [domAnswer, maxDepth];
+    
+    
+  } else {return [dom, depth];} 
 }
