@@ -17,30 +17,27 @@ function increaseRankBy(n){
 }
 function deepestChild(){
   let doc = document.getElementById('app');
-  return find(doc.querySelector("#grand-node div"));
+  return find(doc.querySelector("#grand-node div div div"));
 }
 
 function find(dom){
-  return findaux(null ,dom, 0)[0];
+  return findaux(dom, 0)[0];
 }
-function findaux(lastparent, dom, depth) {
+function findaux(dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
-    let maxDepth = depth; 
-    let parent = lastparent;
+    let maxDepth = depth;
+    let domAnswer = dom;
     for (let i = 0; i < children.length; i++) {
-      let ans = findaux(dom, children[i], 1 + depth);
-      if (ans){
-      let parentans = ans[0];
+      let ans = findaux(children[i], 1 + depth);
+      let domans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
-        parent = parentans;
+        domAnswer = domans; 
         maxDepth = depthans;
       }
-        
-      }
     }
-    return [parent, maxDepth];
-  } else {return null;} 
+    return [domAnswer, maxDepth];
+  } else {return [dom, depth];} 
 }
