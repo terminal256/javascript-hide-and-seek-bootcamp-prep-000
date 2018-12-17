@@ -23,7 +23,7 @@ function deepestChild(){
 function find(dom){
   return findaux(dom, 0)[0];
 }
-function findaux(dom, depth) {
+function findaux(lastparent, dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
