@@ -28,16 +28,14 @@ function findaux(dom, depth) {
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
     let maxDepth = depth;
-    let domAnswer = dom;
     for (let i = 0; i < children.length; i++) {
       let ans = findaux(children[i], 1 + depth);
       let domans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
-        domAnswer = dom; 
         maxDepth = depthans;
       }
     }
-    return [domAnswer, maxDepth];
+    return [dom, maxDepth];
   } else {return [dom, depth];} 
 }
