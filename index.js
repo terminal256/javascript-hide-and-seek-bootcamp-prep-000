@@ -31,7 +31,7 @@ function findaux(dom, depth) {
     for (let i = 0; i < children.length; i++) {
       let ans = find(children[i], 1 + depth);
       let domans = ans[0];
-      let depthans = and[1];
+      let depthans = ans[1];
       if (depthans > maxDepth){
         domAnswer = domans; 
         maxDepth = depthans;
