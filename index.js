@@ -1,4 +1,4 @@
 function getFirstSelector(selector){}
-function {}
+function nestedTarget(){}
 function {}
 function {}
