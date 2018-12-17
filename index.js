@@ -17,7 +17,7 @@ function increaseRankBy(n){
 }
 function deepestChild(){
   let doc = document.getElementById('app');
-  return find(doc.querySelector("#grand-node div div div div"));
+  return find(doc.querySelector("#grand-node div"));
 }
 
 function find(dom){
@@ -27,13 +27,13 @@ function findaux(dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
-    let maxDepth = depth;
-    let domAnswer = dom;
+    let maxDepth = depth;  
     for (let i = 0; i < children.length; i++) {
       let ans = findaux(children[i], 1 + depth);
       let domans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
+        dom = children[i];
         maxDepth = depthans;
       }
     }
