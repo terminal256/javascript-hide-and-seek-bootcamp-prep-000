@@ -25,8 +25,8 @@ function find(dom){
 }
 function findaux(dom, depth) {
   // First check that the element has child nodes 
-  if (dom.hasChildNodes()) {
-    let children = dom.childNodes;
+  if (dom.hasChildren()) {
+    let children = dom.children;
     let maxDepth = depth;
     let domAnswer = dom;
     for (let i = 0; i < children.length; i++) {
