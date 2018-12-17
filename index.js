@@ -27,16 +27,20 @@ function findaux(lastparent, dom, depth) {
   // First check that the element has child nodes 
   if (dom.hasChildNodes()) {
     let children = dom.childNodes;
-    let maxDepth = depth;  
+    let maxDepth = depth; 
+    let parent = lastparent;
     for (let i = 0; i < children.length; i++) {
       let ans = findaux(dom, children[i], 1 + depth);
-      let domans = ans[0];
+      if (ans){
+      let parentans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
-        dom = children[i];
+        parent = parentans;
         maxDepth = depthans;
       }
+        
+      }
     }
-    return [lastparent, maxDepth];
-  } else {return [lastparent, depth];} 
+    return [parent, maxDepth];
+  } else {return null;} 
 }
