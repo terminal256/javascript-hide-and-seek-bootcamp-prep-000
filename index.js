@@ -34,7 +34,7 @@ function findaux(dom, depth) {
       let domans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
-        domAnswer = domans; 
+        domAnswer = dom; 
         maxDepth = depthans;
       }
     }
