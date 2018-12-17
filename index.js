@@ -5,7 +5,7 @@ function getFirstSelector(selector){
   return doc.querySelector(selector);
 }
 function nestedTarget(){
-  return doc.querySelector();
+  return doc.querySelector("#nested .target");
   
 }
 function increaseRankBy(n){
