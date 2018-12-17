@@ -19,14 +19,14 @@ function deepestChild(){
   return doc.querySelector("#grand-node");
 }
 
-function find(array, criteriaFn) {
+function find(dom, criteriaFn) {
   // initialize two variables, `current`, and `next`
   // `current` keeps track of the element that we're
   // currently on, just like we did when unpacking the
   // array above; `next` is itself an array that keeps
   // track of the elements (which might be arrays!) that
   // we haven't looked at yet
-  let current = array
+  let current = dom.childNodes
   let next = []
  
   // hey, a `while` loop! this loop will only
