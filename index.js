@@ -1,7 +1,9 @@
 const doc = document
   .getElementById('app');
 
-function getFirstSelector(selector){}
+function getFirstSelector(selector){
+  return doc.querySelector(selector);
+}
 function nestedTarget(){}
 function increaseRankBy(n){
   const lis = doc.querySelectorAll('ul.ranked-list li');
