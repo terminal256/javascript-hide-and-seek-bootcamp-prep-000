@@ -21,7 +21,7 @@ function deepestChild(){
 }
 
 function find(dom){
-  return findaux(dom, 0)[0];
+  return findaux(null ,dom, 0)[0];
 }
 function findaux(lastparent, dom, depth) {
   // First check that the element has child nodes 
@@ -29,7 +29,7 @@ function findaux(lastparent, dom, depth) {
     let children = dom.childNodes;
     let maxDepth = depth;  
     for (let i = 0; i < children.length; i++) {
-      let ans = findaux(children[i], 1 + depth);
+      let ans = findaux(dom, children[i], 1 + depth);
       let domans = ans[0];
       let depthans = ans[1];
       if (depthans > maxDepth){
@@ -37,6 +37,6 @@ function findaux(lastparent, dom, depth) {
         maxDepth = depthans;
       }
     }
-    return [dom, maxDepth];
-  } else {return [dom, depth];} 
+    return [lastparent, maxDepth];
+  } else {return [lastparent, depth];} 
 }
