@@ -1,7 +1,5 @@
-const 
-
 function getFirstSelector(selector){
-  
+  let doc = document.getElementById('app');
   return doc.querySelector(selector);
 }
 function nestedTarget(){
